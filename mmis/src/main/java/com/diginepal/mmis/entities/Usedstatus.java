@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="used_status")
-public class Usedstaus extends BaseEntity {
+public class Usedstatus extends BaseEntity {
 	
 	private String staus;
 

@@ -4,8 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="drinking_water_type")
-public class Drinkingwatertype extends BaseEntity{
+@Table(name="road_type")
+public class Roadtype extends BaseEntity {
 
 	private String type;
 

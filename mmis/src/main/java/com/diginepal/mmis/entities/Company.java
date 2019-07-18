@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -20,7 +21,7 @@ public class Company extends BaseEntity{
 	private String email;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Branch> branch;
 	public String getName() {
 		return name;

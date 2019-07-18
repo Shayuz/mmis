@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -37,8 +38,7 @@ public class Houseowner extends BaseEntity {
 	private String pannumber;
 	private String recordstatus;
 
-	@OneToOne
-	private Branch branch;
+	
 	
 	@OneToOne
 	private Disabledtype disabledtype;
@@ -61,10 +61,10 @@ public class Houseowner extends BaseEntity {
 	@OneToOne
 	private Educationtype educationtype;
 	
-	@OneToMany(mappedBy = "houseowner", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "houseowner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Family> family;
 	
-	@OneToMany(mappedBy = "houseowner", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "houseowner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Houseland> houseland;
 
 	public String getFname() {
@@ -225,14 +225,6 @@ public class Houseowner extends BaseEntity {
 
 	public void setRecordstatus(String recordstatus) {
 		this.recordstatus = recordstatus;
-	}
-
-	public Branch getBranch() {
-		return branch;
-	}
-
-	public void setBranch(Branch branch) {
-		this.branch = branch;
 	}
 
 	public Disabledtype getDisabledtype() {

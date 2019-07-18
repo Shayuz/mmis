@@ -28,7 +28,7 @@ public class Family extends BaseEntity {
 	private User user;
 	
 	@ManyToOne
-	@JoinColumn(name = "house_owner")
+	@JoinColumn(name = "house_owner_id")
 	private Houseowner houseowner;
 
 	public String getFname() {

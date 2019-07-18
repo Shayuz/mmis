@@ -4,8 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="drinking_water_type")
-public class Drinkingwatertype extends BaseEntity{
+@Table(name="identity_type")
+public class Identitytype extends BaseEntity {
 
 	private String type;
 
@@ -16,7 +16,6 @@ public class Drinkingwatertype extends BaseEntity{
 	public void setType(String type) {
 		this.type = type;
 	}
-	
 	
 
 }
